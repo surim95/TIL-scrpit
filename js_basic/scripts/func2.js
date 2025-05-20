@@ -145,3 +145,33 @@ const result = basic.map(function(num){return num *ch});
 console.log(result);
 const result2 = basic.map (num => num * ch);
 console.log(result2);
+//함수 5/20---------------------------------------------------------------------------
+console.log('---------------------------------------------');
+//익명함수란? 변수 내 function 키워드를 지정해 대입하는 함수
+//함수 자체의 이름이 아닌 변수 이름에 의존해서 할당되기 때문에 익명함수라고 부른다.
+//function greeting(){} // 일반함수
+const greeting = function(){
+    console.log('hello');
+}; //익명함수
+greeting(); //익명함수 호출은 함수명이 아닌 변수명으로 호출한다.
+//일반함수는 선언보다 호출을 먼저해도 오류가 발생하지 않지만 익명함수는 선언보다 호출을 먼저 하면 오류가 발생한다.
+console.log('--------------------------------------------화살표 함수 ES6');
+//화살표 함수는 일반함수가 아닌 익명함수일 때 함수를 간결하게 줄이는 목적으로 사용한다.
+//function을 => 기호로 바꿔서 사용한다.
+//대입연산자(=)와 화살표함수(=>)를 붙여서 사용할 수 없기 때문에 매개변수와 함수선언표시 순서를 바꿔서 = () => 로 사용한다.
+//일반함수인 경우
+function bab (num) {
+    return '밥'+num+'공기 주세요';
+};
+console.log(bab(2));
+//화살표함수인 경우
+const bab2 = (num) => {return '밥'+num+'공기 주세요'};
+console.log(bab2(2));
+//함수 호출할 때마다 아래와 같은 결과 출력하기(매개변수 활용)
+const bab3 =(menu) =>{return menu+'주세요'};
+console.log(bab3('밥'));
+console.log(bab3('반찬'));
+console.log(bab3('국'));
+//밥 주세요, 반찬 주세요, 국 주세요
+//const 변수 = (매개변수) => {return 함수반환값}
+//변수() //익명함수호출식
