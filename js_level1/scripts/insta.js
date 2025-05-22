@@ -29,7 +29,19 @@ function likeOnOff() {
     }
 }
 //5. 좋아요 아이콘 한번 터치하면 좋아요, O 다시 터치 시 좋아요 해제 반복 (조건문공부 필요)
-likeIcon.addEventListener ('click',likeOnOff);
+// likeIcon.addEventListener ('click',likeOnOff);
+
+//(위) likeIcon 클릭 시 실행되는 콜백함수
+//(아래) likeIcon 객체가 a태그로 클릭 시 새로고침되어 스크롤이 위로 올라가는 문제 해결을 위한 방법
+//콜백함수 호출리 아닌 익명함수 또는 화살표 함수 이용 필수
+//익명함수 또는 화살표함수로 작성 시 이벤트 앞 객체 정보가 함수의 매개변수 정보로 자동으로 대입된다.
+//위 매개변수가 받은 정보를 확인하려면 매개변수에 변수명을 작성하고 console.log()로 확인할 수 있다.
+likeIcon.addEventListener ('click', function (e) {
+    //console.log(e);
+    e.preventDefault(); //태그의 동적기능 취소
+    likeOnOff();
+});
+
 
 //6. 댓글 아이콘을 누르면 댓글 입력창이 실행, 실행화면에서 바깥쪽 영역 터치하면 댓글 입력창 닫힘 (html추가 필요)
 //7. 공유 아이콘을 누르면 공유 가능 계정들 표시된 창 실행, 바깥쪽 영역 터치 시 닫힘 (html추가 필요)
