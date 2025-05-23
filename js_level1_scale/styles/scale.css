@@ -53,7 +53,11 @@ main #result_btn{
 main #result {
     text-align: center;
     margin-top: 20px;
-    font-size: 3rem;
+    font-size: 1.75rem;
     font-weight: 600;
     color: #eeaa22;
+    line-height: 1.4;
+}
+main #result em {
+    font-weight: 600;
 }

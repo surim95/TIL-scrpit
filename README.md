@@ -27,3 +27,4 @@
 * **해결법** : 이벤트함수 내에 익명함수 및 화살표함수를 작성하고 매개변수에 `e` 작성 후 함수 실행 내에 `e.preventDefault()`를 작성한다.
 * (예) `a객체.addEventListener('click',function(e){e.preventDefault();})`
 * (예) `a객체.addEventListener('click',(e)=>e.preventDefault())`
+## 태그(DOM)
