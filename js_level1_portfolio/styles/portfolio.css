@@ -1,7 +1,41 @@
-main {}
-main .design {}
-main .design a {}
-main .design a img{}
-.popup_bg{}
-.popup_bg .contents{}
-.popup_bg .contents img{}
+main {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+    /* height:max-content 내용만큼 */
+}
+main .design {
+    width: 1400px; margin: 0 auto; background-color: yellow;
+    display: flex; flex-flow: row wrap;
+}
+main .design a {
+    width: calc((100% - (20px * 3)) / 4);
+    margin-right: 20px;
+    height: 200px;
+    border: 1px solid red;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+main .design a:nth-child(4n) {margin-right: 0;}
+main .design a img{
+    width: 180%;
+    transform: translate(-22.2%, -5%);
+}
+/* 클릭 시 실행 팝업 */
+.popup_bg{
+    position: fixed; left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+}
+.popup_bg .contents{
+    background: #fff;
+    width: 600px; margin: 0 auto;
+    height: 85vh;
+    overflow: auto;
+    padding: 50px;
+}
+.popup_bg .contents img{
+    width: 100%;
+    border: 0.25px solid black;
+}
