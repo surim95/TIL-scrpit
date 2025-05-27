@@ -29,7 +29,7 @@ thumbNailA.forEach(function(item) { //익명함수
         popupImg.setAttribute('src', imgSrc);
     });
     // this.childeren[0].src // this이용 시
-    // popupBg.children[0].children[0].scr = this.children[0].src;
+    // popupBg.children[0].children[0].scㅎr = this.children[0].src;
     // return; 함수종료
 });
 /* thumbNailA[0].addEventListener('click', openPopup);
