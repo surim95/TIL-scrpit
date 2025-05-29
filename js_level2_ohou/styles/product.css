@@ -1,3 +1,4 @@
+body, html {scroll-behavior: smooth;}
 main {
     background-color: aqua;
     width: 995px;
@@ -112,6 +113,23 @@ main section .right_order .product_option select[name=color] {
 main section .right_order .product_option select[name=color] option {}
 main section .right_order .product_option select[name=size] {}
 main section .right_order .product_option select[name=size] option {}
+/* JS에서 select 클릭 시 출력되는 영역 시작 */
+main section .order_select {}
+main section .order_select .list {}
+main section .order_select .list .color {}
+main section .order_select .list .size {}
+main section .order_select .close {}
+main section .order_select .order_num {}
+main section .order_select .order_num #minus {}
+main section .order_select .order_num #plus {}
+main section .order_select .order_num input[name=user_num] {}
+main section .order_select .price {
+    font-size: 1.5rem; 
+}
+main section .order_select .price em{
+    font-weight: 600;
+}
+/* 끝 */
 main section .right_order .total {}
 main section .right_order .total p {}
 main section .right_order .total .price {}
@@ -133,3 +151,6 @@ main section .right_order .btn_group #buy_btn {
     background-color: #59AFFF;
     color: #fff;
 }
+main > .info {height: 100vh;}
+main > #review {height: 100vh; background-color: yellow;}
+main > .board {height: 100vh;}

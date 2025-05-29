@@ -11,7 +11,15 @@
 </head>
 <body>
     <main>
-        <div class="path">반려동물 > 강아지 > 강아지 패션 > 패딩 아우터</div>
+        <div class="path">
+            <a href="#">반려동물</a>
+            <span>&gt;</span><!-- &gt; -->
+            <a href="#">강아지</a>
+            <span>&gt;</span>
+            <a href="#">강아지 패션</a>
+            <span>&gt;</span>
+            <a href="#">패딩 아우터</a>
+        </div>
         <section>
             <div class="left_thumnail">
                 <div class="small">
@@ -28,7 +36,7 @@
             <div class="right_order">
                 <p class="brand">울리</p>
                 <h1>몽쉘 패딩 하네스 올인원 6size 3colors</h1>
-                <a href="#" class="review">
+                <a href="#review" class="review">
                     <span class="score">
                         <em>★</em>
                         <em>★</em>
@@ -63,6 +71,19 @@
                         <option value="m">M(39,900원)</option>
                     </select>
                 </div>
+                <!-- JS에서 select 클릭 시 출력되는 영역 시작 -->
+                <div class="order_select">
+                    <p class="list">색상:<em class="color">블랙</em>/ 사이즈:<em class="size">S</em></p>
+                    <!-- em으로 묶은 이유: 동적으로 달라지는 부분이기 때문에 -->
+                    <a href="#" class="close">X</a>
+                    <div class="order_num">
+                        <button type="button" id="minus">-</button>
+                        <input type="number" value="1" name="user_num">
+                        <button type="button" id="plus">+</button>
+                    </div>
+                    <p class="price"><em>39,900</em>원</p>
+                </div>
+                <!-- JS에서 select 클릭 시 출력되는 영역 끝 -->
                 <div class="total">
                     <p>주문금액</p>
                     <p class="price"><em>0</em>원</p>
@@ -73,6 +94,9 @@
                 </div>
             </div>
         </section>
+        <section class="info">상품정보</section>
+        <section id="review">리뷰</section>
+        <section class="board">문의</section>
     </main>
 </body>
 </html>
