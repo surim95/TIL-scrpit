@@ -49,3 +49,7 @@ const birthday_flower = [
         content:'축하, 감사'
     }
 ]
+const userYear = document.querySelector ('input[name*=year');
+const userMonth = document.querySelector ('input[name*=month');
+const userDay = document.querySelector ('input[name*=day');
+console.log(birthday_flower, userYear, userMonth, userDay)
