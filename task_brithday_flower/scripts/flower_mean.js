@@ -96,15 +96,12 @@ userDay.addEventListener('focus', function(){
 })
 // focus 벗어났을 때 value 값 생기는 기능
 userYear.addEventListener('blur', function(){
-    this.value = '';
     this.placeholder ='0000';
 })
 userMonth.addEventListener('blur', function(){
-    this.value ='';
     this.placeholder ='00';
 })
 userDay.addEventListener('blur', function(){
-    this.value = '';
     this.placeholder ='00';
 })
 // 함수
