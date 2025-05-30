@@ -83,13 +83,29 @@ closeBtn.addEventListener ('click', function(){
 })
 // focus일 때 value 값 없어지는 기능
 userYear.addEventListener('focus', function(){
-    userYear.value = '';
+    this.value = '';
+    this.placeholder ='';
 })
-userMonth.addEventListener('focus', ()=>{
-    userMonth.value ='';
+userMonth.addEventListener('focus', function(){
+    this.value ='';
+    this.placeholder ='';
 })
 userDay.addEventListener('focus', function(){
-    userDay.value = '';
+    this.value = '';
+    this.placeholder ='';
+})
+// focus 벗어났을 때 value 값 생기는 기능
+userYear.addEventListener('blur', function(){
+    this.value = '';
+    this.placeholder ='0000';
+})
+userMonth.addEventListener('blur', function(){
+    this.value ='';
+    this.placeholder ='00';
+})
+userDay.addEventListener('blur', function(){
+    this.value = '';
+    this.placeholder ='00';
 })
 // 함수
 function yearCheck() {
