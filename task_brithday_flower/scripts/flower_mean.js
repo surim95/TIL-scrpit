@@ -52,4 +52,16 @@ const birthday_flower = [
 const userYear = document.querySelector ('input[name*=year');
 const userMonth = document.querySelector ('input[name*=month');
 const userDay = document.querySelector ('input[name*=day');
-console.log(birthday_flower, userYear, userMonth, userDay)
+const flowerBtn = document.querySelector ('.wrap .question');
+const flowerOutput = document.querySelectorAll ('.flower_output em');
+console.log(birthday_flower, userYear, userMonth, userDay, flowerBtn, flowerOutput);
+//입력된 월이 month와 동일할 경우 flower, content 부여
+/* flowerBtn.addEventListener('click',flowerEvent);
+function flowerEvent () {
+}
+ */
+birthday_flower.forEach(function (flowerMonNum) {
+    if (flowerMonNum.month == userMonth.value) {
+        console.log(userMonth.value);
+    }
+})

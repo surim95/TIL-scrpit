@@ -5,10 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS 복습 + 블로그</title>
     <style>
-        
+        #bg {
+            width: 100%;
+            height: 100vh;
+            background: url(https://thumb.photo-ac.com/21/21a42a70c5bc54d2c15699c02d7637d1_t.jpeg) center / cover;
+        }
+        #bg .gradient {
+            height: 100vh;
+            background: linear-gradient(-90deg,rgba(237, 40, 106, 1) 20%, rgba(53, 13, 133, 1) 70%, rgba(0, 196, 137, 1) 80%);
+            opacity: 0.5;
+        }
+        #bg .gradient section{
+            display: grid;
+            /* grid-template-columns: 100px 200px; */ /* 1열, 2열 순서대로 자식 너비 지정 */
+            /* grid-template-columns: repeat(2, minmax(300px, auto)); */
+            grid-template-columns: 200px 1fr;
+            /* 1열 2열 반복(repeat)적용 최소(min) 200, 최대(max) auto 100%와 같이 인식 */
+            /* grid-template-rows: 300px 100px;  *//* 1행 300px, 2행 100px 자식 높이 지정 */
+            grid-template-rows: repeat(2, 100px); /* 1, 2행 둘다 100px */
+            
+        }
+        #bg .gradient section > div{
+            border: 10px solid red;
+            /* width: 100px; height: 100px; */
+            /* 부모에 grid로 열, 행 크기 입력 시 자식에는 별도로 크기를 입력하면 안된다. */
+        }
+        #bg .gradient section .a{}
+        #bg .gradient section .b{}
+        #bg .gradient section > div > * {
+            width: 50px;
+            position: relative; left: 50%; top: 50%; transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body>
-    
+    <div id="bg">
+        <div class="gradient">
+            <section>
+                <div class="a">
+                    <button type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6 .1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+                    </button>
+                </div>
+                <div class="b">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"/></svg>
+                </div>
+                <div class="c">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>
