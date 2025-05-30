@@ -93,6 +93,9 @@ main section .right_order .benefit_delivery dd {
 main section .right_order .benefit_delivery dt:nth-of-type(2) ~dd{
     margin-bottom: 10px;
 }
+main section .right_order .benefit_delivery dt:nth-of-type(2) ~dd:nth-last-of-type(1) {
+    margin-bottom: 0;
+}
 main section .right_order .benefit_delivery dd em {
     font-weight: 700;
 }
@@ -114,17 +117,37 @@ main section .right_order .product_option select[name=color] option {}
 main section .right_order .product_option select[name=size] {}
 main section .right_order .product_option select[name=size] option {}
 /* JS에서 select 클릭 시 출력되는 영역 시작 */
-main section .order_select {}
+main section .order_select {
+    position: relative;
+    margin: 0 auto 25px;
+    background-color: #eee;
+    padding: 10px;
+}
+main section .order_select > .list, main section .order_select > .close {
+    margin-bottom: 50px;
+}
 main section .order_select .list {}
 main section .order_select .list .color {}
 main section .order_select .list .size {}
-main section .order_select .close {}
-main section .order_select .order_num {}
+main section .order_select .close {
+    position: absolute; right: 0; top: 0;
+    padding: 10px 10px 0 0;
+}
+main section .order_select .order_num {
+    padding: 2px 8px; background-color: #fff;
+    width: max-content; border-radius: 4px;
+    border: 1px solid #d1d1d1;
+}
 main section .order_select .order_num #minus {}
 main section .order_select .order_num #plus {}
-main section .order_select .order_num input[name=user_num] {}
+main section .order_select .order_num input[name=user_num] {
+    width: 40px; line-height: 30px;
+    text-align: center;
+}
 main section .order_select .price {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
+    position: absolute; right:0px; bottom: 0;
+    padding: 0 10px 10px 0;
 }
 main section .order_select .price em{
     font-weight: 600;

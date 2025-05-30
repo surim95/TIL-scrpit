@@ -1,0 +1,56 @@
+main {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+main .container {
+    width: 40%; height: 60vh;
+    margin: 0 auto;
+    border: 1px solid orange;
+    border-radius: 40px;
+    position: relative; z-index: 2;
+}
+main .container::after {
+    content: ''; display: block;
+    width: 100%; height: 100%;
+    background: url(../images/flower_total.jpg) center / cover;
+    position: absolute; left: 0; top: 0; z-index: -2;
+    border-radius: 40px;
+    opacity: 20%;
+}
+main .container .wrap {
+    margin: 0 auto; text-align: center;
+    width: 80%;
+    position: relative; top: 50%;
+    transform: translateY(-50%);
+}
+main .container .wrap > * {
+    margin-bottom: 30px;
+}
+main .container .wrap .user_info {
+    display: flex;
+    justify-content: space-between;
+}
+main .container .wrap .user_info p{
+}
+main .container .wrap .user_info p > * {
+    margin-right: 6px;
+}
+main .container .wrap .user_info p input{
+    width: 68px;
+    text-align: center;
+}
+main .container .wrap .question{
+    font-size: 2rem;
+    line-height: 1.5;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+main .container .wrap .flower_output {
+    font-size: 2rem;
+    line-height: 1.5;
+    background-color: aqua;
+    border-radius: 10px;
+    margin-bottom: 0;
+}
+main .container .wrap .flower_output em{}
