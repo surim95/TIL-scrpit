@@ -32,8 +32,7 @@ main .container .wrap .user_info {
     display: flex;
     justify-content: space-between;
 }
-main .container .wrap .user_info p{
-}
+main .container .wrap .user_info p{}
 main .container .wrap .user_info p > * {
     margin-right: 6px;
 }
@@ -47,12 +46,27 @@ main .container .wrap .question_btn{
     line-height: 1.5;
     background-color: aliceblue;
     border-radius: 10px;
+    border: 3px solid #000;
 }
 main .container .wrap .flower_output {
-    font-size: 2rem;
+    padding: 20px 5px;
+    font-size: 1.5rem;
     line-height: 1.5;
-    background-color: aqua;
+    border: 2px solid brown;
     border-radius: 10px;
     margin-bottom: 0;
 }
-main .container .wrap .flower_output em{}
+main .container .wrap .flower_output em{
+    font-weight: 700;
+    color: brown;
+}
+main .container .wrap .close_btn {
+    margin-top: 10px;
+    padding: 5px 5px;
+    width: max-content;
+    font-weight: 500;
+    float: right;
+    border: 1px solid #000;
+    border-radius: 6px;
+    background-color: #fff;
+}

@@ -55,20 +55,57 @@ const userDay = document.querySelector ('input[name*=day');
 const flowerBtn = document.querySelector ('.wrap .question_btn');
 const flowerOutput = document.querySelector ('.flower_output');
 const flowerOutputChange = document.querySelectorAll ('.flower_output em');
-console.log(userYear, userMonth, userDay, flowerBtn, flowerOutput, flowerOutputChange);
-
+const closeBtn = document.querySelector ('.close_btn');
+let todayYear = new Date().getFullYear();
+console.log(userYear, userMonth, userDay, flowerBtn, flowerOutput, flowerOutputChange, closeBtn, todayYear);
+// 기본값
 flowerOutput.style.display = 'none';
-
-userMonth.addEventListener('change',()=>{
-    flowerBtn.addEventListener ('click',function(){
-
-    flowerOutput.style.display == 'none' ? flowerOutput.style.display = 'block' : flowerOutput.style.display = 'none'
+closeBtn.style.display = 'none';
+// 년,일 입력 제한
+flowerBtn.addEventListener ('click',function(){
+    yearCheck(); //년도 제한 함수 호출
+    monthCheck(); //월 제한 함수 호출
+    dayCheck(); //일 제한 함수 호출
     birthday_flower.forEach(function(flowerMonth){
-            if(flowerMonth.month == userMonth.value) {
-                flowerOutputChange[0].textContent = flowerMonth.month;
-                flowerOutputChange[1].textContent = flowerMonth.flower;
-                flowerOutputChange[2].textContent = flowerMonth.content;
-            }
-        })
-    }) 
+        if (flowerMonth.month == userMonth.value) {
+            flowerOutputChange[0].textContent = flowerMonth.month;
+            flowerOutputChange[1].textContent = flowerMonth.flower;
+            flowerOutputChange[2].textContent = flowerMonth.content;
+            flowerOutput.style.display = 'block'
+            return closeBtn.style.display = 'block';
+        }
+    })
 })
+// 나타난 닫기 버튼을 누르면 메세지랑 닫기 버튼이 사라지는 기능
+closeBtn.addEventListener ('click', function(){
+    flowerOutput.style.display = 'none'
+    closeBtn.style.display = 'none';
+})
+// focus일 때 value 값 없어지는 기능
+userYear.addEventListener('focus', function(){
+    userYear.value = '';
+})
+userMonth.addEventListener('focus', ()=>{
+    userMonth.value ='';
+})
+userDay.addEventListener('focus', function(){
+    userDay.value = '';
+})
+// 함수
+function yearCheck() {
+    if (userYear.value < 1800 || userYear.value > todayYear) {
+        alert(`1800년부터 현재년도까지 입력해주세요.`);
+    }
+}
+function monthCheck() {
+    if (userMonth.value < 1 || userMonth.value > 12) {
+        alert(`1월부터 12월까지 입력해주세요.`);
+        flowerOutput.style.display = 'none'
+        return closeBtn.style.display = 'none';
+    }
+}
+function dayCheck() {
+    if (userDay.value < 1 || userDay.value > 31) {
+        alert(`1일부터 31일까지 입력해주세요.`);
+    }
+}
