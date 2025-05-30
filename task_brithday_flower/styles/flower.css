@@ -41,7 +41,8 @@ main .container .wrap .user_info p input{
     width: 68px;
     text-align: center;
 }
-main .container .wrap .question{
+main .container .wrap .question_btn{
+    padding: 6px 10px;
     font-size: 2rem;
     line-height: 1.5;
     background-color: aliceblue;

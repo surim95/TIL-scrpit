@@ -36,6 +36,23 @@
             width: 50px;
             position: relative; left: 50%; top: 50%; transform: translate(-50%, -50%);
         }
+        .box {
+            display: grid;
+            grid-template-areas: 
+                'list1 list2 list3'
+                'list4 list5 list6'
+            ;
+            gap: 10px 20px;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: 100px 200px;
+        }
+        .box li {border: 3px solid black;}
+        .box li:nth-child(1) {grid-area: list1;}
+        .box li:nth-child(2) {grid-area: list2;}
+        .box li:nth-child(3) {grid-area: list3;}
+        .box li:nth-child(4) {grid-area: list4;}
+        .box li:nth-child(5) {grid-area: list5;}
+        .box li:nth-child(6) {grid-area: list6;}
     </style>
 </head>
 <body>
@@ -52,6 +69,14 @@
                 <div class="c">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg>
                 </div>
+                <ul class="box">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                </ul>
             </section>
         </div>
     </div>

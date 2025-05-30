@@ -52,16 +52,23 @@ const birthday_flower = [
 const userYear = document.querySelector ('input[name*=year');
 const userMonth = document.querySelector ('input[name*=month');
 const userDay = document.querySelector ('input[name*=day');
-const flowerBtn = document.querySelector ('.wrap .question');
-const flowerOutput = document.querySelectorAll ('.flower_output em');
-console.log(birthday_flower, userYear, userMonth, userDay, flowerBtn, flowerOutput);
-//입력된 월이 month와 동일할 경우 flower, content 부여
-/* flowerBtn.addEventListener('click',flowerEvent);
-function flowerEvent () {
-}
- */
-birthday_flower.forEach(function (flowerMonNum) {
-    if (flowerMonNum.month == userMonth.value) {
-        console.log(userMonth.value);
-    }
+const flowerBtn = document.querySelector ('.wrap .question_btn');
+const flowerOutput = document.querySelector ('.flower_output');
+const flowerOutputChange = document.querySelectorAll ('.flower_output em');
+console.log(userYear, userMonth, userDay, flowerBtn, flowerOutput, flowerOutputChange);
+
+flowerOutput.style.display = 'none';
+
+userMonth.addEventListener('change',()=>{
+    flowerBtn.addEventListener ('click',function(){
+
+    flowerOutput.style.display == 'none' ? flowerOutput.style.display = 'block' : flowerOutput.style.display = 'none'
+    birthday_flower.forEach(function(flowerMonth){
+            if(flowerMonth.month == userMonth.value) {
+                flowerOutputChange[0].textContent = flowerMonth.month;
+                flowerOutputChange[1].textContent = flowerMonth.flower;
+                flowerOutputChange[2].textContent = flowerMonth.content;
+            }
+        })
+    }) 
 })
