@@ -122,3 +122,37 @@ function dayCheck() {
         alert(`1일부터 31일까지 입력해주세요.`);
     }
 }
+//input number 자릿수 제한
+userYear.addEventListener('input',yearLimitNum);
+function yearLimitNum() {
+    if (!/^.{0,4}$/.test(userYear.value)) {
+        userYear.value = userYear.value.slice(0,4);
+        userMonth.focus();
+    }
+} //이 방법이 더 깔끔.
+//유연하고 표현력. 다양한 패턴 가능. 단점: 가독성 낮음
+
+/* function yearLimitNum() {
+    if (userYear.value.length > 5) {
+        userYear.value = userYear.value.slice(0,4);
+    }
+} */
+//직관적, 초보자에게 이해 쉬움. 단점: 조건 변경 시 유연성 낮음.
+userMonth.addEventListener('input',monthLimitNum);
+function monthLimitNum() {
+    if (!/^.{0,2}$/.test(userMonth.value)) {
+        userMonth.value = userMonth.value.slice(0,2);
+        userDay.focus();
+    }
+}
+userDay.addEventListener('input',dayLimitNum);
+function dayLimitNum() {
+    if (!/^.{0,2}$/.test(userDay.value)) {
+        userDay.value = userDay.value.slice(0,2);
+        flowerBtn.focus();
+    }
+}
+//flowerBtn.focus() 이벤트
+flowerBtn.addEventListener('focus',function(){
+    flowerBtn.style.backgroundColor = '#d1d1d1';
+})
