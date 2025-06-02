@@ -156,3 +156,6 @@ function dayLimitNum() {
 flowerBtn.addEventListener('focus',function(){
     flowerBtn.style.backgroundColor = '#d1d1d1';
 })
+flowerBtn.addEventListener('blur',function(){
+    flowerBtn.style.backgroundColor = 'aliceblue';
+})
