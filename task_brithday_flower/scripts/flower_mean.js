@@ -115,7 +115,7 @@ function monthCheck() {
         alert(`1월부터 12월까지 입력해주세요.`);
         flowerOutput.style.display = 'none'
         return closeBtn.style.display = 'none';
-    }
+    }//09도 9로 인식하는 이유: 숫자는 10진법이기 때문에.
 }
 function dayCheck() {
     if (userDay.value < 1 || userDay.value > 31) {
