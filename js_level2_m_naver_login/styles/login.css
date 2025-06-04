@@ -65,18 +65,17 @@ main .login_wrap .login_inner #login_frm .id_pw_wrap input[name*=pw] {
 }
 main .login_wrap .login_inner #login_frm .error_msg {
     text-align: left;
-    color: #f00; font-size: 0.81rem; padding: 10px 0; line-height: 1.4;
-    margin: 10px 0;
+    color: #f00; font-size: 0.81rem; padding: 10px 0 0 10px; line-height: 1.4;
     /* display: none; */
 }
-main .login_wrap .login_inner #login_frm .login_btn {
+main .login_wrap .login_inner #login_frm #login_btn {
     width: 100%;
     background-color: #eee;
     font-size: 1.125rem; font-weight: 600;
     line-height: 50px;
     border: 1px solid red;
     border-radius: 10px;
-    margin:10px 0 20px;
+    margin:20px 0;
 }
 main .login_wrap .login_inner #login_frm .login_chk {
     text-align: left;
