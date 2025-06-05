@@ -47,33 +47,56 @@ langSelectBtn.addEventListener('click',()=> {
 조건5) 조건4 상황에서 페이지 새로고침할 시
 조건5 결과) 다시 로그인해 주세요.
 */
-
+//네이버 회원 정보 저장 DB
+const naverUserDB =[{
+    id: 'aaa',
+    pw: 'a1234',
+},{
+    id: 'bbb',
+    pw: 'b1234',
+}
+]
 //조건1) 아이디와 비밀번호를 모두 입력하지 않고 로그인 클릭 시
 //조건1 결과) 아이디 또는 전화번호를 입력해 주세요.
 const errorMsg = document.querySelector ('#login_frm .error_msg');
 const loginBtn = document.querySelector ('#login_btn');
 const userId = document.querySelector ('#login_frm .id_pw_wrap input[name*=id]');
 const userPw = document.querySelector ('#login_frm .id_pw_wrap input[name*=pw]');
-console.log(errorMsg, loginBtn, userId, userPw);
+console.log(errorMsg, loginBtn, userId, userPw, naverUserDB);
 errorMsg.style.display = 'none'
 loginBtn.addEventListener('click',()=>{
     errorMsg.style.display = 'block'
-    /* if (userId.value == '' && userPw.value == '') {
-        errorMsg.textContent = '아이디 또는 전화번호를 입력해 주세요.';
-    }
-    //조건2) 아이디 작성O, 비밀번호 작성X 로그인 클릭 시
-    //조건2 결과) 비밀번호를 입력해 주세요.
-    else if (userId.value != '' && userPw.value == '') {
-        errorMsg.textContent = '비밀번호를 입력해 주세요.';
-    }
-    //조건3) 아이디 작성O, 비밀번호 작성O 로그인 클릭 시
-    //조건3 결과) 한번 틀릴 시: 아이디(로그인 전화번호, 로그인 전용 아이디) 또는 비밀번호가 잘못 되었습니다. 아이디와 비밀번호를 정확히 입력해 주세요.
-    else if (userId.value != '' && userPw.value != '') {
-        errorMsg.textContent = '아이디(로그인 전화번호, 로그인 전용 아이디) 또는 비밀번호가 잘못 되었습니다. 아이디와 비밀번호를 정확히 입력해 주세요.';
-    } */
-    //삼항조건 활용 조건1
-    //조건식 ? 조건식 참 결과 : 조건식 거짓 결과
-    //조건결과 대입 변수 = 조건식 ? 조건식 참 결과 : 조건식 거짓 결과
-    errorMsg.textContent = userId.value == '' && userPw.value == '' ? '아이디 또는 전화번호를 입력해 주세요.' : ''
-    //리액트는 if 보다 삼항조건을 많이 사용.
+    naverUserDB.forEach(function(naverUserDBIndex){
+        //삼항조건 활용 조건1
+        //조건식 ? 조건식 참 결과 : 조건식 거짓 결과
+        //조건결과 대입 변수 = 조건식 ? 조건식 참 결과 : 조건식 거짓 결과
+        //아이디와 비밀번호를 모두 입력 안할 시(참) 실행결과
+        //errorMsg.textContent = userId.value == '' && userPw.value == '' ? '아이디 또는 전화번호를 입력해 주세요.' : ''
+        //리액트는 if 보다 삼항조건을 많이 사용.
+        if (userId.value == '' && userPw.value == '') {
+            errorMsg.textContent = '아이디 또는 전화번호를 입력해 주세요.';
+        }
+        //조건2) 아이디 작성O, 비밀번호 작성X 로그인 클릭 시
+        //조건2 결과) 비밀번호를 입력해 주세요.
+        else if (userPw.value == '') {
+            errorMsg.textContent = '비밀번호를 입력해 주세요.';
+        }
+        //조건3) 아이디 작성O, 비밀번호 작성O 로그인 클릭 시
+        //조건3 결과) 한번 틀릴 시: 아이디(로그인 전화번호, 로그인 전용 아이디) 또는 비밀번호가 잘못 되었습니다. 아이디와 비밀번호를 정확히 입력해 주세요.
+        /* else if (userId.value == '') {
+            errorMsg.textContent = '아이디 또는 전화번호를 입력해 주세요.';
+        } */
+        else if (userId.value == naverUserDBIndex.id && userPw.value == naverUserDBIndex.pw) {
+            console.log('id일치')
+            errorMsg.style.display = 'none';
+            //아이디와 비밀번호가 DB서버의 0인덱스 값과 모두 일치할 때 네이버 메인페이지로 이동
+            window.location.href = 'http://naver.com';
+        } else {
+            errorMsg.textContent = '아이디(로그인 전화번호, 로그인 전용 아이디) 또는 비밀번호가 잘못 되었습니다. 아이디와 비밀번호를 정확히 입력해 주세요.';
+        }
+    })
 });
+userId.addEventListener('focus',()=> userId.placeholder = ''
+)
+userId.addEventListener('blur',()=> userId.placeholder = '아이디 또는 전화번호'
+)

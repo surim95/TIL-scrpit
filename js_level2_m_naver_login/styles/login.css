@@ -38,7 +38,7 @@ main .login_wrap {
 }
 main .login_wrap h1 {
     width: 135px; height: 26px;
-    background: yellow url(../images/m_sp.png) -316px -104px;
+    background: url(../images/m_sp.png) -316px -104px;
     margin: 40px auto;
 }
 main .login_wrap h1 a {
@@ -70,10 +70,9 @@ main .login_wrap .login_inner #login_frm .error_msg {
 }
 main .login_wrap .login_inner #login_frm #login_btn {
     width: 100%;
-    background-color: #eee;
-    font-size: 1.125rem; font-weight: 600;
+    background-color: #aaabbb;
+    font-size: 1.125rem; font-weight: 600; color: #fff;
     line-height: 50px;
-    border: 1px solid red;
     border-radius: 10px;
     margin:20px 0;
 }
