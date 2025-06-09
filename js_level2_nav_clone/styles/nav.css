@@ -1,0 +1,84 @@
+header {
+    width: 100%; min-width: 320px; height: 98px;
+    background-color: rgb(69, 101, 245);
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > h1 {}
+header > h1 a{
+    color: #fff; font-size: 1.875rem; font-weight: 600;
+}
+header nav{}
+header nav .gnb{
+    background: green;
+    display: flex;
+}
+header nav .gnb > li{
+    position: relative;
+}
+header nav .gnb > li > a{
+    padding: 0 60px;
+    color: #fff; font-size: 1.25rem; font-weight: 600;
+    display: block; line-height: 98px;
+}
+header nav .lnb_bg{
+    background: #eee; height: 400px;
+    width: 100%;
+    position: absolute; left: 0; top: 98px; z-index: 100;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+header nav .gnb > li > .lnb{
+    position: absolute; z-index: 200;
+    border-right: 1px solid #000;
+    height: 340px; width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+header nav .gnb > li > .lnb li{
+    margin-bottom: 20px;
+}
+header nav .gnb > li > .lnb li a{}
+header .right_menu{display: flex; align-items: center;}
+header .right_menu .family{
+    margin-right: 14px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: rgb(255, 255, 255, 0.2);
+    border-radius: 60px;
+}
+header .right_menu .lang{
+    display: flex;
+    margin-right: 14px;
+}
+header .right_menu .lang .active{}
+header .right_menu .lang .active::after{
+    content: ''; display: inline-block;
+    width: 1px; height: 8px;
+    background-color: #fff;
+    margin: 0 6px 2px;
+}
+header .right_menu .lang > a{color: #fff;}
+header .right_menu .m_nav {background-color: #fff;}
+header .right_menu .m_nav_wrap {
+    position: absolute; width: 100%; height: 100vh; margin: 0;
+    background-color: #fff; left: 0; top: 0; z-index: 300;
+}
+header .right_menu .m_nav_wrap .top {
+    height: 98px; padding: 0 30px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+header .right_menu .m_nav_wrap .top h1{}
+header .right_menu .m_nav_wrap .top h1 a{font-size: 1.875rem; font-weight: 600;
+}
+header .right_menu .m_nav_wrap .top .close {}
+header .right_menu .m_nav_wrap .m_nav_open {}
+/* JS에서 gnb 복사 후 style 적용 */
+header .right_menu .m_nav_wrap .m_nav_open .gnb {background: yellow;}
+header .right_menu .m_nav_wrap .m_nav_open .gnb li{}
+header .right_menu .m_nav_wrap .m_nav_open .gnb li a{}
+header .right_menu .m_nav_wrap .m_nav_open .gnb li .lnb {}
+header .right_menu .m_nav_wrap .m_nav_open .gnb li .lnb li {}
+header .right_menu .m_nav_wrap .m_nav_open .gnb li .lnb li a{}
