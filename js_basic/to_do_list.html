@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <style>
+        /* reset.css */
+        /* 모든 태그들에 대한 공통 초기값 세팅 */
+        html, body, h1, h2, h3, h4, h5, h6,
+        p, dl, dt, dd, ul, ol, li, div, hr, address, blockquote, video,
+        header, footer, nav, aside, article, section, figure, figcaption, main, details, summary,
+        form, fieldset, legend, input, button, select, option, textarea,
+        span, em, strong, img, sup, sub, br, del, q, s, mark, code, a,
+        table, thead, tbody, tfoot, tr, td, th {
+            margin: 0; padding: 0;
+            line-height: 1; letter-spacing: -0.02em; word-spacing: 0;
+            font-size:1em; font-weight: 400; font-style: normal;
+            color: #000;
+            font-family: 'Pretendard', sans-serif; /* 폰트 변경하기 */
+            box-sizing: border-box;
+        }
+        /* 개별 태그 초기값 */
+        a {text-decoration: none;}
+        ul, ol,li {list-style: none;}
+        fieldset {border: 0;}
+        legend {display: none;}
+        input {border:0; outline: none;}
+        button {border: 0; background: none; cursor: pointer; }
+        table, th, tr, td {border-collapse: collapse;}
+        select, option {border:0; appearance: none;}
+        /* chrome, safari, edge, opera */
+        /* 웹브라우저 엔진 -webkit-, -moz-(firefox), -m-(micro), -o- */
+        input[type=number]::-webkit-outer-spin-button, 
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance:none;
+            margin: 0;
+        }
+        /* firefox */
+        input[type=number] {
+            -moz-appearance: none;
+            margin: 0;
+        }
+        /* reset 끝 */
+        main{
+            width: 400px; height: 60vh;
+            border: 1px solid blueviolet;
+            margin: 0 auto;
+            text-align:center;
+            border-radius: 10px;
+            background-color: aliceblue;
+            position: relative;
+        }
+        main h1{
+            font-size: 2rem; font-weight: 600;
+            margin: 40px 0;
+            color: #eeaaee;
+        }
+        main ul{
+            width: 85%; height: 70%;
+            margin: 20px auto;
+            overflow-y: auto;
+        }
+        main ul li{
+            text-align: left;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 10px;
+            background-color: #fff;
+            border-bottom: 1px solid #000;
+            padding-left: 6px;
+        }
+        main ul li::before{
+            content: ''; display: block;
+            width: 10px; height: 10px;
+            border: 1px solid #aaa;
+        }
+        main ul li span{
+            width: 100%; padding: 6px;
+        }
+        main ul li .del_btn{
+            border: none;
+            padding: 6px;
+        }
+        main .input_btn{
+            width: 100%;
+            position: absolute;
+            bottom: 20px; left: 50%; transform: translateX(-50%);
+            display: flex; justify-content: center;
+        }
+        main .input_btn .to{
+            width: 70%; height: 32px;
+            font-size: 1rem;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            padding-left: 10px;
+            margin-right: 10px;
+        }
+        main .input_btn #to_btn{
+            width: 20%; height: 32px;
+            background-color: #eee;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+    </style>
+    <script src="./scripts/to_do_list.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>오늘의 할 일</h1>
+        <ul>
+            <li><span>여기에 할 일이 등록됩니다.</span><button type="button" class="del_btn">X</button></li>
+        </ul>
+        <div class="input_btn">
+            <input type="text" class="to" name="to" placeholder="할 일을 입력하세요.">
+            <button type="button" id="to_btn">등록</button>
+        </div>
+    </main>
+</body>
+</html>
