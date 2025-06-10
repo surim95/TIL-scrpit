@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♥채타미♥</title>
+    <link rel="stylesheet" href="../js_level1_portfolio/styles/reset.css">
+    <style>
+        main{
+            width: 30%; height: 50vh;
+            margin: 0 auto;
+            border: 3px solid pink;
+            border-radius: 30px;
+            text-align: center;
+            background: url(./images/tami.jpg) center / cover;
+            position: relative; overflow: hidden; z-index: -2;
+        }
+        main::after{
+            content: ''; display: block;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            position: absolute; left: 0; top: 0; z-index: -1;
+        }
+        main .title {
+            margin-top: 50px;
+        }
+        main .title h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        main .title h2 {
+            font-size: 1.5rem;
+            margin-bottom: 80px;
+            color: #fff;
+        }
+        main .title #birthday{
+            border: 1px solid pink;
+            border-radius: 4px;
+            background-color: #fff;
+            width: 50%; height: 30px;
+            padding: 14px;
+        }
+        main .contents{
+            width: 80%;
+            margin: 40px auto 0;
+        }
+        main .contents >p{
+            margin-bottom: 20px;
+            text-align: left;
+            padding-bottom: 8px;
+            border-bottom: 2px solid pink;
+            color: #fff;
+        }
+        main .contents >p em{
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.15rem;
+        }
+        main #calc_btn{
+            background-color: #fff;
+            border: 1px solid pink;
+            width: 50px; height: 30px;
+            border-radius: 4px;
+            background-color: black;
+            background-clip: content-box;
+        }
+    </style>
+    <script src="./scripts/Math_ex.js" defer></script>
+</head>
+<body>
+    <main>
+        <div class="title">
+            <h1>♥채타미♥</h1>
+            <h2>2016년 4월 20일</h2>
+            <!-- <input type="date" id="birthday" name="birthday"> -->
+        </div>
+        <div class="contents">
+            <p class="year">경과 년도: <em></em>년</p>
+            <p class="month">경과 개월: <em></em>월</p>
+            <p class="day">경과 요일: <em></em>일</p>
+            <p class="time">경과 시간: <em></em>시간</p>
+            <p class="old">나이: <em></em>살</p>
+            <!-- today.getFullYear() - birth.getFullYear() : 몇살인지-->
+        </div>
+        <!-- <button type="button" id="calc_btn">계산</button> -->
+    </main>
+</body>
+</html>
