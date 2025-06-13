@@ -14,17 +14,18 @@ joinBtn.addEventListener('click',()=>{
 const payBtn = document.querySelector('#pay');
 const payResetBtn = document.querySelector('#pay_reset');
 const payMsg = document.querySelector('.pay_msg');
+let payMsgOut;
 payMsg.classList.add('hide');
 payResetBtn.classList.add('hide');
 payBtn.addEventListener('click',()=>{
     payMsg.classList.remove('hide'); //숨기는 클래스 제거로 보이게 하기
     payResetBtn.classList.remove('hide'); //결제 취소를 누르면 setTimeout이 멈추게.
     payMsg.textContent = '결제 완료되었습니다.';
-    const movePage = setTimeout(()=>{
+    payMsgOut= setTimeout(()=>{
         window.location.href = './timer3.html'; //광고
     },5000);
-    payResetBtn.addEventListener('click',()=>{
-        clearTimeout(movePage);
-        console.log('setTimeout 이동삭제완료');
-    })
+})
+payResetBtn.addEventListener('click',()=>{
+    clearTimeout(payMsgOut);
+    console.log('setTimeout 이동삭제완료');
 })
