@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>체이닝 애니메이션 예제 - 프로모션 배너</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="./styles/reset.css">
   <style>
     /* 프로모션 배너 스타일 */
@@ -32,5 +33,16 @@
     <p>최대 50% 할인 이벤트!</p>
     <button id="animateBtn" type="button">자세히 보기</button>
   </div>
+  <script>
+    const $bnr = $('#promoBanner');
+    console.log($bnr);
+    //배너에 마우스 올릴 시 다양한 애니메이션이 순차적으로 실행되기
+    $bnr.mouseover(function(){
+      $(this)
+        .animate({width:'350px',padding:'40px'},500)
+        .animate({backgroundColor:'#ffddee'},800)
+        .animate({borderRadius:'20px'},1000);
+    })
+  </script>
 </body>
 </html>
