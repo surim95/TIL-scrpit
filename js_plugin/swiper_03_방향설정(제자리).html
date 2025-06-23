@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>swiper-direction1</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <!--플러그인 필수 css cdn 연결-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!--플러그인 필수 JS cdn 연결-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        * {margin:0; padding:0; line-height:1.0; box-sizing:border-box;}
+        .swiper {
+            width: 1000px; height: 40px; background-color: #ddd;
+        }
+        .swiper .swiper-wrapper {}
+        .swiper .swiper-wrapper .swiper-slide {text-align: center; background-color: #ddd;}
+        .swiper .swiper-wrapper .swiper-slide a {line-height: 40px;}
+        .swiper .swiper-wrapper .slide1 {}
+        .swiper .swiper-wrapper .slide2 {}
+        .swiper .swiper-wrapper .slide3 {}
+        .swiper .swiper-wrapper .slide4 {}
+    </style>
+</head>
+<body>
+    <div class="swiper" id="news">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1"><a href="#">트럼프 ‘이란 정권교체’ 언급…유가 5% 급등</a></div>
+            <div class="swiper-slide slide2"><a href="#">李대통령, 말레이시아 총리와 통화…"연내 FTA 타결 노력"</a></div>
+            <div class="swiper-slide slide3"><a href="#">하메네이 "응징당할 것" 첫 반응…美 거론은 안해</a></div>
+            <div class="swiper-slide slide4"><a href="#">김용현측 "중앙지법 형사34부 전원 기피신청"</a></div>
+        </div>
+    </div>
+    <script>
+        const newsSwiper = new Swiper('#news',{
+            effect:'fade',
+            loop:true,
+            autoplay:{delay:1000},
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
